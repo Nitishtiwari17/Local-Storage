@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<hr lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <style>
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsU41Y0jOw3lttMu4TCEaadptaCSqgDtg3aA&usqp=CAU');
+        }
+        
+        div {
+            background-image: url("https://media.istockphoto.com/photos/empty-dark-blue-studio-room-with-light-and-shadow-abstract-background-picture-id1339787499?b=1&k=20&m=1339787499&s=170667a&w=0&h=psnH04yZpoVzxa4xTZt4hDwff5WiO0cQrtnYdRttkSI=");
+            width: 100%;
+            height: 650px;
+            border-radius: 30px;
+        }
+        
+        .centre {
+            margin-top: 90px;
+            margin-left: 340px;
+            width: 50%;
+            border: 1px solid rgb(8, 8, 8);
+            height: 450px;
+        }
+        
+        #header {
+            border-radius: 10px;
+            color: rgb(27, 12, 238);
+            height: 50px;
+            text-align: center;
+            font-size: 30px;
+        }
+        
+        #topicname {
+            color: rgb(241, 11, 11);
+            border-radius: 90px;
+            height: 30px;
+            margin-top: 30px;
+            width: 350px;
+            margin-left: 170px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 60px;
+        }
+        
+        pre {
+            color: red
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="centre">
+        <div id="header">
+            <h2>Local Storage OF Data</h2>
+        </div>
+        <div id="topicname">Enter your Detail</div>
+        <pre>
+            <pre>
+                Enter Name:
+                <input type="text"  id="textbox1">
+                <br>
+                Enter Email:
+                <input type="text"  id="textbox2">
+                <br>
+                 Password:
+                <input type="text"  id="textbox3">
+
+                <button id="btn">Add Data</button>
+                <a href="Storagedata.html">See Detail</a>
+            </pre>
+
+    </div>
+    <script>
+        //Reference
+        input1 = document.getElementById("textbox1");
+        input2 = document.getElementById("textbox2");
+        input3 = document.getElementById("textbox3");
+        btn = document.getElementById("btn");
+        // console.log(input);
+        // console.log(btn);
+        var data = {
+            name: "",
+            email: "",
+            password: "",
+        };
+        //function to storage data in Localstorage
+        btn.onclick = function() {
+            data.name = input1.value;
+            data.email = input2.value;
+            data.password = input3.value;
+            console.log(data);
+            localStorage.setItem("Info", JSON.stringify(data));
+        }
+    </script>
+</body>
+
+</html>
